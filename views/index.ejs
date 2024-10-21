@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title%></title>
+  </head>
+  <body>
+    <h1>Messages</h1>
+
+    <ul>
+      <% messages.forEach(function(message, index) { %>
+      <li>
+        <strong>User:</strong> <%= message.user %> <br />
+        <strong>Message:</strong> <%= message.text %>
+        <strong>Date:</strong> <%=message.added.toDateString() %> <br />
+        <a href="/message/<%= index %>">
+          <button>Open</button>
+        </a>
+      </li>
+      <hr />
+      <% }); %>
+    </ul>
+    <a href="/new">
+      <button>Add message</button>
+    </a>
+  </body>
+</html>
